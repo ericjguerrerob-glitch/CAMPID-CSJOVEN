@@ -1,67 +1,357 @@
-html{
-    font-size: 7px;
+html {
+    font-size: 10px;
+    box-sizing: border-box;
 }
-body{
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
     width: 100%;
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    background-color: #0b1a12;
     text-align: center;
-    background: linear-gradient(rgb(13, 142, 13), white);
-    color: black;
-    min-height: 100vh;
+}
+
+/* Fondo inmersivo con atmósfera de naturaleza nocturna */
+.forest-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #06150b 0%, #0d381c 50%, #152e1f 100%);
+    z-index: -1;
+}
+
+/* Estilos de Encabezado */
+.hero-section {
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.badge-org {
+    background-color: rgba(76, 210, 225, 0.2);
+    color: #4cd2e1;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid #4cd2e1;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6.5rem;
+    letter-spacing: 4px;
+    margin: 1rem 0 0.2rem 0;
+    color: #f7e10a;
+    text-shadow: 0 4px 20px rgba(247, 225, 10, 0.4);
+}
+
+.subtitle {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.event-dates {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-dates h2 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    color: #4cd2e1;
+}
+
+.location {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Banner de bienvenida dinámico */
+.welcome-banner {
+    background: linear-gradient(90deg, #f70ad7, #4cd2e1);
+    color: #0b1a12;
+    padding: 1.2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 2rem auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: pulseGlow 3s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(76,210,225,0.4); }
+    100% { transform: scale(1.02); box-shadow: 0 0 25px rgba(247,10,215,0.6); }
+}
+
+/* Cuenta Regresiva */
+.countdown-section {
+    padding: 2rem 1rem;
+}
+
+.countdown-section h3, .cards-section h3, .teams-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #f7e10a;
+}
+
+.c-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.c-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(76, 210, 225, 0.3);
+    padding: 1.5rem;
+    border-radius: 12px;
+    min-width: 80px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.c-numbers {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.c-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #4cd2e1;
+    letter-spacing: 1px;
+}
+
+/* Tarjetas Interactivas 3D (Flip Cards) */
+.cards-section {
+    padding: 3rem 1rem;
+}
+
+.cards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 240px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
-button{
-   background-color:rgb(76, 210, 225);
-color:yellow;
-border-style:none;
-padding: 5px;
-border-radius: 10px;
-cursor: pointer;
+
+.flip-card-front {
+    background: linear-gradient(135deg, rgba(16, 45, 27, 0.9), rgba(6, 21, 11, 0.95));
 }
-button:hover{
-    background-color: rgba(45, 173, 228, 0.5);
+
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
 }
-button:a{
-    text-decoration: none;
-    color: #0a3451;
+
+.flip-card-front h4 {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    color: #f7e10a;
 }
-button span{
-    font-size: 1.5rem;
+
+.tap-hint {
+    font-size: 1rem;
+    color: #4cd2e1;
+    margin: 0;
+    opacity: 0.8;
 }
-footer a{
-    color:rgb(247, 10, 215);
+
+.flip-card-back {
+    background: linear-gradient(135deg, #0d381c, #06150b);
+    transform: rotateY(180deg);
+    text-align: left;
+    align-items: flex-start;
+    overflow-y: auto;
 }
-.c-container{
+
+.flip-card-back h4 {
+    font-size: 1.4rem;
+    margin: 0 0 0.8rem 0;
+    color: #4cd2e1;
+    width: 100%;
+    text-align: center;
+}
+
+.flip-card-back ul, .flip-card-back p {
+    font-size: 1.2rem;
+    margin: 0.4rem 0;
+    padding-left: 1.5rem;
+    line-height: 1.4;
+}
+
+.flip-card-back ul {
+    padding-left: 1.8rem;
+}
+
+.small-note {
+    font-size: 1.1rem;
+    color: #f7e10a;
+    text-align: center;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.warning-text {
+    color: #ffcc00;
+    font-weight: 700;
+}
+
+/* Sección de Equipos */
+.teams-section {
+    padding: 3rem 1rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.teams-grid {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-.c-number{
-    background-color: #000;
-    color: #fff;
-    padding: 12px;
-    border-radius: 5px;
-box-shadow: 0 0.5em rgba(0, 0, 0, 0);;
+
+.team-card {
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 200px;
+    border: 2px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease;
 }
-.c-text{
-margin-top: 2px;
-font-size: 0.7rem;
+
+.team-card:hover {
+    transform: translateY(-5px);
 }
+
+.team-badge {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-card h4 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.team-card.red { border-color: #ff4d4d; color: #ff6b6b; }
+.team-card.yellow { border-color: #ffd700; color: #ffe642; }
+.team-card.green { border-color: #2ecc71; color: #4cd137; }
+.team-card.blue { border-color: #3498db; color: #00d2d3; }
+
+/* Botón de Confirmación Gigante y Llamativo */
+.action-section {
+    padding: 4rem 1rem;
+}
+
+.deadline-text {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #f70ad7, #4cd2e1);
+    color: #06150b;
+    padding: 2rem 3.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(247, 10, 215, 0.5);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(76, 210, 225, 0.7);
+}
+
+/* Footer */
+footer {
+    padding: 2.5rem;
+    background-color: #040c07;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer a {
+    color: #f70ad7;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad para pantallas grandes */
 @media (min-width: 900px) {
-   html{
-    font-size: 24px;
-   }
-}
-.c-number{
-    padding: 32px;
-}
-button{
-  padding: 20px;
-  font-size: 1.25rem;
-}
-button span{
-    font-size: 0.75rem;
+    html {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 8rem;
+    }
 }

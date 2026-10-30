@@ -3,34 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campamento</title>
+    <title>Campid CsJoven - Campamento Identidad</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts para tipografías modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Campid CsJoven</h1>
-    <P>Welcome to the Campid CsJoven!</P>
-    <h2>🗓️ Del 04 al 06 de Diciembre Del 2026🗓️ </h2>
-    <p><b>📍La Biscaina </b>Mas alla de Ciudad de Tavakare📍</p>
-    <p><b>Cuenta Regresiva Para el Campid CsJoven</b></p>
-    <div class="c-container">
-        <div class="c-item"></div>
-        <div id="dias" class="c-numbers">44</div>
-    <div class="c-text">DIAS</div>
-    <div class="c-item"></div>
-        <div id="horas" class="c-numbers">00</div>
-    <div class="c-text">HORAS</div>
-    <div class="c-item"></div>
-        <div id="minutos" class="c-numbers">43</div>
-    <div class="c-text">MINUTOS</div>
-    <div class="c-item"></div>
-        <div id="segundps" class="c-numbers">00</div>
-    <div class="c-text">Segundos</div>
-    </div>
-    </div>
-    <p><b>Vienes al Campamento</b></p>
-    <button><a href="http://wa.me/584126014134">⛺Confirmar Inscripción⛺ <br><span>Drees Code:Deportivo</span></a></button>
-    <p>Confirmar Hasta el 01/12/26! El Lugar de encuentro es en la Iglesia Cristo El Salvador a las 7:00am</p>
-    <footer>Quieres una Web para tu evento? <a href="http://wa.me/584126014134">Clic Aqui para Mas Información</a></footer>
+
+    <!-- Fondo dinámico con efecto de estrellas/naturaleza -->
+    <div class="forest-bg"></div>
+
+    <header class="hero-section">
+        <span class="badge-org">CsJoven Presenta</span>
+        <h1>CAMPID</h1>
+        <p class="subtitle">Campamento Identidad</p>
+        
+        <div class="event-dates">
+            <h2>🗓️ Del 03 al 05 de Diciembre, 2026 🗓️</h2>
+            <p class="location">📍 <b>La Biscaina</b> — Más allá de Ciudad de Tavakare</p>
+        </div>
+
+        <!-- Mensaje de bienvenida dinámico / Gancho -->
+        <div class="welcome-banner">
+            <p id="welcome-message">🔥 ¡Prepárate para vivir una experiencia que marcará tu vida! 🔥</p>
+        </div>
+    </header>
+
+    <!-- Cuenta Regresiva -->
+    <section class="countdown-section">
+        <h3>Cuenta Regresiva Para El Gran Encuentro</h3>
+        <div class="c-container">
+            <div class="c-box">
+                <div id="dias" class="c-numbers">00</div>
+                <div class="c-text">DÍAS</div>
+            </div>
+            <div class="c-box">
+                <div id="horas" class="c-numbers">00</div>
+                <div class="c-text">HORAS</div>
+            </div>
+            <div class="c-box">
+                <div id="minutos" class="c-numbers">00</div>
+                <div class="c-text">MINUTOS</div>
+            </div>
+            <div class="c-box">
+                <div id="segundos" class="c-numbers">00</div>
+                <div class="c-text">SEGUNDOS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarjetas Interactivas (Flip Cards) -->
+    <section class="cards-section">
+        <h3>💡 Información Esencial (Toca para voltear) 💡</h3>
+        <div class="cards-grid">
+            
+            <!-- Tarjeta 1: Equipaje / Qué llevar -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="card-icon">🎒</span>
+                        <h4>¿Qué debo llevar?</h4>
+                        <p class="tap-hint">Toca para ver detalles</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>🎒 Equipaje & Recomendaciones</h4>
+                        <ul>
+                            <li>👕 Ropa deportiva & Ropa para ensuciar.</li>
+                            <li>✨ Ropa especial para fiesta de gala.</li>
+                            <li>💧 Termo de agua personal.</li>
+                            <li>📱 Tu cel (para capturar los mejores recuerdos).</li>
+                            <li>⚠️ <b>Evita llevar objetos de valor excesivo.</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Inversión / Precios -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="card-icon">💵</span>
+                        <h4>Inversión & Precios</h4>
+                        <p class="tap-hint">Toca para ver detalles</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>💵 Costos de Inscripción</h4>
+                        <p><b>General:</b> $35 (Pago a BCV o Divisa: $30)</p>
+                        <p><b>Promo Hermanos:</b> $60 (Pago a BCV o Divisa: $50)</p>
+                        <p class="small-note">¡Asegura tu cupo con tiempo!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Info Varia & Logística -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="card-icon">📍</span>
+                        <h4>Logística & Salida</h4>
+                        <p class="tap-hint">Toca para ver detalles</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>📍 Datos Importantes</h4>
+                        <p>🍿 Puedes llevar tus propios snacks.</p>
+                        <p>🏢 <b>Lugar:</b> Auditorio Iglesia Cristo El Salvador Central.</p>
+                        <p>⏰ <b>Encuentro:</b> 4:00 PM | <b>Salida:</b> 5:00 PM.</p>
+                        <p class="warning-text">⚠️ ¡Puntualidad vital! Daremos información clave antes de partir.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de Equipos -->
+    <section class="teams-section">
+        <h3>⚔️ Nuestros 4 Equipos ⚔️</h3>
+        <div class="teams-grid">
+            <div class="team-card red">
+                <div class="team-badge">🦅</div>
+                <h4>Águilas Rojas</h4>
+            </div>
+            <div class="team-card yellow">
+                <div class="team-badge">🦁</div>
+                <h4>Leones Amarillos</h4>
+            </div>
+            <div class="team-card green">
+                <div class="team-badge">🐃</div>
+                <h4>Búfalos Verdes</h4>
+            </div>
+            <div class="team-card blue">
+                <div class="team-badge">🐺</div>
+                <h4>Lobos Azules</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de Confirmación Principal -->
+    <section class="action-section">
+        <p class="deadline-text">🚨 ¡Fecha límite para confirmar: <b>01/12/26</b>! 🚨</p>
+        <a href="http://wa.me/584245172825?text=¡Hola!%20Quiero%20confirmar%20mi%20inscripción%20al%20Campid%20CsJoven" class="cta-button" target="_blank">
+            ⛺ ¡CONFIRMAR MI INSCRIPCIÓN AQUÍ! ⛺
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>¿Quieres una Web profesional para tu evento o iglesia?</p>
+        <a href="http://wa.me/584126014134?text=¡Hola!%20Me%20interesa%20información%20para%20crear%20una%20web" target="_blank">Clic aquí para más información de desarrollo</a>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
