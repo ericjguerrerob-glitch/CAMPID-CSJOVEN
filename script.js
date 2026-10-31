@@ -23,7 +23,7 @@ function actualizarCountdown() {
     document.getElementById("segundos").textContent = String(segundosFaltantes).padStart(2, "0");
 }
 
-// Mensajes de bienvenida dinámicos (más limpios y legibles en dispositivos móviles)
+// Mensajes de bienvenida dinámicos
 const mensajesBienvenida = [
     "🔥 ¡Prepárate para vivir una experiencia que marcará tu vida!",
     "⛺ ¡El destino de tu identidad se define este diciembre!",
@@ -39,17 +39,16 @@ function cambiarMensajeDinamico() {
     }
 }
 
-// Función para crear las luciérnagas mágicas en el fondo
+// Función para crear las luciérnagas mágicas
 function crearLuciernagas() {
     const container = document.getElementById("fireflies");
     if (!container) return;
 
-    const cantidad = 15; // Número de luciérnagas en pantalla
+    const cantidad = 15;
     for (let i = 0; i < cantidad; i++) {
         const firefly = document.createElement("div");
         firefly.classList.add("firefly");
         
-        // Posición y tiempos aleatorios para que se vean naturales
         firefly.style.left = Math.random() * 100 + "vw";
         firefly.style.animationDuration = (Math.random() * 8 + 6) + "s";
         firefly.style.animationDelay = (Math.random() * 5) + "s";

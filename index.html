@@ -22,7 +22,7 @@
         
         <div class="event-dates">
             <h2>🗓️ Del 11 al 13 de Diciembre, 2026 🗓️</h2>
-            <p class="location">📍 <b>La Viscaina</b> — BARINAS📍</p>
+            <p class="location">📍 <b>La Viscaina</b> — BARINAS</p>
         </div>
 
         <!-- Mensaje de bienvenida dinámico / Gancho -->
@@ -54,7 +54,7 @@
         </div>
     </section>
 
-    <!-- Tarjetas Interactivas (Flip Cards) -->
+    <!-- Tarjetas Interactivas (Flip Cards - Información Esencial) -->
     <section class="cards-section">
         <h3>💡 Información Esencial (Toca para voltear) 💡</h3>
         <div class="cards-grid">
@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <!-- Tarjeta 2: Inversión / Precios -->
+            <!-- Tarjeta 2: Inversión / Precios Actualizados -->
             <div class="flip-card" onclick="this.classList.toggle('flipped')">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -90,14 +90,14 @@
                     </div>
                     <div class="flip-card-back">
                         <h4>💵 Costos de Inscripción</h4>
-                        <p><b>General:</b> $40 (Pago a BCV o Divisa: $35)</p>
-                        <p><b>Promo Hermanos:</b> $70 (Pago a BCV o Divisa: $65)</p>
+                        <p><b>General:</b> $40 (Pago a BCV) o Divisa: $35</p>
+                        <p><b>Promo Hermanos:</b> $70 (Pago a BCV) o Divisa: $65</p>
                         <p class="small-note">¡Asegura tu cupo con tiempo!</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Tarjeta 3: Info Varia & Logística (Incluyendo la edad mínima) -->
+            <!-- Tarjeta 3: Info Varia & Logística -->
             <div class="flip-card" onclick="this.classList.toggle('flipped')">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -118,26 +118,77 @@
         </div>
     </section>
 
-    <!-- Sección de Equipos -->
+    <!-- Sección de Equipos (Con efecto de volteo especial y versículos Rhema) -->
     <section class="teams-section">
         <h3>⚔️ Nuestros 4 Equipos ⚔️</h3>
+        <p class="teams-subtitle">¡Toca cada equipo para descubrir su identidad y palabra Rhema!</p>
+        
         <div class="teams-grid">
-            <div class="team-card red">
-                <div class="team-badge">🦅</div>
-                <h4>Águilas Rojas</h4>
+            
+            <!-- Águilas Rojas -->
+            <div class="team-flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="team-flip-inner">
+                    <div class="team-front red">
+                        <div class="team-badge">🦅</div>
+                        <h4>Águilas Rojas</h4>
+                        <span class="team-tap-hint">Toca para ver identidad</span>
+                    </div>
+                    <div class="team-back red-back">
+                        <h4>🦅 Águilas Rojas</h4>
+                        <p class="team-phrase">"VOLANDO ALTO"</p>
+                        <p class="team-verse"><b>Isaías 40:31</b></p>
+                    </div>
+                </div>
             </div>
-            <div class="team-card yellow">
-                <div class="team-badge">🦁</div>
-                <h4>Leones Amarillos</h4>
+
+            <!-- Leones Amarillos -->
+            <div class="team-flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="team-flip-inner">
+                    <div class="team-front yellow">
+                        <div class="team-badge">🦁</div>
+                        <h4>Leones Amarillos</h4>
+                        <span class="team-tap-hint">Toca para ver identidad</span>
+                    </div>
+                    <div class="team-back yellow-back">
+                        <h4>🦁 Leones Amarillos</h4>
+                        <p class="team-phrase">"VALENTÍA Y CONFIANZA"</p>
+                        <p class="team-verse"><b>Proverbios 28:1</b></p>
+                    </div>
+                </div>
             </div>
-            <div class="team-card green">
-                <div class="team-badge">🐃</div>
-                <h4>Búfalos Verdes</h4>
+
+            <!-- Búfalos Verdes -->
+            <div class="team-flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="team-flip-inner">
+                    <div class="team-front green">
+                        <div class="team-badge">🐃</div>
+                        <h4>Búfalos Verdes</h4>
+                        <span class="team-tap-hint">Toca para ver identidad</span>
+                    </div>
+                    <div class="team-back green-back">
+                        <h4>🐃 Búfalos Verdes</h4>
+                        <p class="team-phrase">"FUERZA UNGIDA"</p>
+                        <p class="team-verse"><b>Salmos 92:10</b></p>
+                    </div>
+                </div>
             </div>
-            <div class="team-card blue">
-                <div class="team-badge">🐺</div>
-                <h4>Lobos Azules</h4>
+
+            <!-- Lobos Azules -->
+            <div class="team-flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="team-flip-inner">
+                    <div class="team-front blue">
+                        <div class="team-badge">🐺</div>
+                        <h4>Lobos Azules</h4>
+                        <span class="team-tap-hint">Toca para ver identidad</span>
+                    </div>
+                    <div class="team-back blue-back">
+                        <h4>🐺 Lobos Azules</h4>
+                        <p class="team-phrase">"¡GUERREROS CONQUISTADORES!"</p>
+                        <p class="team-verse"><b>Génesis 49:27</b></p>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 

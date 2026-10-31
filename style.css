@@ -122,7 +122,7 @@ h1 {
     margin: 0;
 }
 
-/* Banner de bienvenida dinámico (Ajustado para evitar aglomeración en móviles) */
+/* Banner de bienvenida dinámico */
 .welcome-banner {
     background: linear-gradient(90deg, #f70ad7, #4cd2e1);
     color: #0b1a12;
@@ -141,7 +141,7 @@ h1 {
     100% { transform: scale(1.02); box-shadow: 0 0 25px rgba(247,10,215,0.6); }
 }
 
-/* Cuenta Regresiva (Ajustada para que no se amontone en celulares pequeños) */
+/* Cuenta Regresiva */
 .countdown-section {
     padding: 1.5rem 1rem;
 }
@@ -182,7 +182,7 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* Tarjetas Interactivas 3D (Flip Cards) */
+/* Tarjetas Interactivas 3D (Flip Cards - Info) */
 .cards-section {
     padding: 2.5rem 1rem;
 }
@@ -296,48 +296,122 @@ h1 {
     font-weight: 700;
 }
 
-/* Sección de Equipos */
+/* Sección de Equipos (Diseño Especial Interactivo y Espiritual) */
 .teams-section {
     padding: 2.5rem 1rem;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.teams-subtitle {
+    font-size: 1.3rem;
+    color: #4cd2e1;
+    margin-top: -0.8rem;
+    margin-bottom: 2rem;
 }
 
 .teams-grid {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-.team-card {
-    background: rgba(20, 20, 20, 0.8);
-    border-radius: 12px;
-    padding: 1.2rem;
-    width: 160px;
-    border: 2px solid rgba(255,255,255,0.1);
-    transition: transform 0.3s ease;
+.team-flip-card {
+    background-color: transparent;
+    width: 210px;
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
 }
 
-.team-card:hover {
-    transform: translateY(-5px);
+.team-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.team-flip-card.flipped .team-flip-inner {
+    transform: rotateX(180deg); /* Efecto de giro vertical original para diferenciarlo de las otras tarjetas */
+}
+
+.team-front, .team-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 2px solid rgba(255,255,255,0.2);
 }
 
 .team-badge {
     font-size: 2.5rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
 }
 
-.team-card h4 {
-    font-size: 1.3rem;
-    margin: 0;
+.team-front h4 {
+    font-size: 1.4rem;
+    margin: 0 0 0.3rem 0;
 }
 
-.team-card.red { border-color: #ff4d4d; color: #ff6b6b; }
-.team-card.yellow { border-color: #ffd700; color: #ffe642; }
-.team-card.green { border-color: #2ecc71; color: #4cd137; }
-.team-card.blue { border-color: #3498db; color: #00d2d3; }
+.team-tap-hint {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Colores personalizados para cada equipo (Frente) */
+.team-front.red { background: linear-gradient(135deg, #401010, #1a0505); border-color: #ff4d4d; color: #ff8787; }
+.team-front.yellow { background: linear-gradient(135deg, #403508, #1a1502); border-color: #ffd700; color: #ffe66d; }
+.team-front.green { background: linear-gradient(135deg, #103518, #051408); border-color: #2ecc71; color: #5cdb95; }
+.team-front.blue { background: linear-gradient(135deg, #0f2c42, #05111a); border-color: #3498db; color: #70a9ff; }
+
+/* Reverso de las tarjetas de equipo (Frases y Versículos Rhema) */
+.team-back {
+    transform: rotateX(180deg);
+    text-align: center;
+    padding: 1rem;
+}
+
+.team-back h4 {
+    font-size: 1.2rem;
+    margin: 0 0 0.4rem 0;
+    color: #f7e10a;
+}
+
+.team-phrase {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin: 0.3rem 0;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.team-verse {
+    font-size: 1rem;
+    margin-top: 0.4rem;
+    color: #4cd2e1;
+    background: rgba(0,0,0,0.4);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+}
+
+/* Estilos de reverso por equipo */
+.team-back.red-back { background: linear-gradient(135deg, #591515, #260707); border-color: #ff4d4d; }
+.team-back.yellow-back { background: linear-gradient(135deg, #59490b, #261f03); border-color: #ffd700; }
+.team-back.green-back { background: linear-gradient(135deg, #154c22, #071f0d); border-color: #2ecc71; }
+.team-back.blue-back { background: linear-gradient(135deg, #153d5c, #071926); border-color: #3498db; }
 
 /* Botón de Confirmación Gigante y Llamativo */
 .action-section {
@@ -397,7 +471,8 @@ footer a:hover {
     h1 {
         font-size: 8rem;
     }
-    .team-card {
-        width: 200px;
+    .team-flip-card {
+        width: 220px;
+        height: 190px;
     }
 }
