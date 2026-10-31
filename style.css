@@ -122,11 +122,12 @@ h1 {
     margin: 0;
 }
 
-/* Banner de bienvenida dinámico */
+/* Banner de bienvenida dinámico (Actualizado: Azul sobrio, elegante y menos chillón) */
 .welcome-banner {
-    background: linear-gradient(90deg, #f70ad7, #4cd2e1);
-    color: #0b1a12;
-    padding: 1rem;
+    background: linear-gradient(135deg, #173b5c, #24588a);
+    color: #ffffff;
+    border: 1px solid rgba(76, 210, 225, 0.3);
+    padding: 1.1rem;
     border-radius: 10px;
     font-weight: 700;
     font-size: 1.3rem;
@@ -137,8 +138,8 @@ h1 {
 }
 
 @keyframes pulseGlow {
-    0% { transform: scale(1); box-shadow: 0 0 10px rgba(76,210,225,0.4); }
-    100% { transform: scale(1.02); box-shadow: 0 0 25px rgba(247,10,215,0.6); }
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(36,88,138,0.4); }
+    100% { transform: scale(1.02); box-shadow: 0 0 20px rgba(76,210,225,0.4); }
 }
 
 /* Cuenta Regresiva */
@@ -338,7 +339,7 @@ h1 {
 }
 
 .team-flip-card.flipped .team-flip-inner {
-    transform: rotateX(180deg); /* Efecto de giro vertical original para diferenciarlo de las otras tarjetas */
+    transform: rotateX(180deg);
 }
 
 .team-front, .team-back {
@@ -377,7 +378,7 @@ h1 {
 .team-front.green { background: linear-gradient(135deg, #103518, #051408); border-color: #2ecc71; color: #5cdb95; }
 .team-front.blue { background: linear-gradient(135deg, #0f2c42, #05111a); border-color: #3498db; color: #70a9ff; }
 
-/* Reverso de las tarjetas de equipo (Frases y Versículos Rhema) */
+/* Reverso de las tarjetas de equipo */
 .team-back {
     transform: rotateX(180deg);
     text-align: center;
