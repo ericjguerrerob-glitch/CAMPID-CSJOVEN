@@ -122,7 +122,7 @@ h1 {
     margin: 0;
 }
 
-/* Banner de bienvenida dinámico (Actualizado: Azul sobrio, elegante y menos chillón) */
+/* Banner de bienvenida dinámico (Azul sobrio y elegante) */
 .welcome-banner {
     background: linear-gradient(135deg, #173b5c, #24588a);
     color: #ffffff;
@@ -414,7 +414,7 @@ h1 {
 .team-back.green-back { background: linear-gradient(135deg, #154c22, #071f0d); border-color: #2ecc71; }
 .team-back.blue-back { background: linear-gradient(135deg, #153d5c, #071926); border-color: #3498db; }
 
-/* Botón de Confirmación Gigante y Llamativo */
+/* Botón de Confirmación Principal (Actualizado con azul sobrio y elegante) */
 .action-section {
     padding: 3rem 1rem;
 }
@@ -426,14 +426,15 @@ h1 {
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, #f70ad7, #4cd2e1);
-    color: #06150b;
+    background: linear-gradient(135deg, #173b5c, #24588a);
+    color: #ffffff;
+    border: 2px solid rgba(76, 210, 225, 0.5);
     padding: 1.6rem 2.5rem;
     font-size: 1.6rem;
     font-weight: 900;
     text-decoration: none;
     border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(247, 10, 215, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
     letter-spacing: 1px;
     max-width: 95%;
@@ -442,7 +443,8 @@ h1 {
 
 .cta-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(76, 210, 225, 0.7);
+    background: linear-gradient(135deg, #1f4b75, #2d6ba8);
+    box-shadow: 0 15px 40px rgba(76, 210, 225, 0.3);
 }
 
 /* Footer */
@@ -455,7 +457,7 @@ footer {
 }
 
 footer a {
-    color: #f70ad7;
+    color: #4cd2e1;
     text-decoration: none;
     font-weight: 700;
 }
