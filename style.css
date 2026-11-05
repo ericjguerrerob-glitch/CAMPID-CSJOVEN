@@ -69,9 +69,87 @@ body {
     }
 }
 
+/* ==========================================
+   BARRA LATERAL FLOTANTE DE REDES SOCIALES (PNG)
+   ========================================== */
+.social-sidebar {
+    position: fixed;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 100;
+}
+
+.social-icon-img {
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid rgba(76, 210, 225, 0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.social-icon-img img {
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
+}
+
+.social-icon-img:hover {
+    transform: scale(1.15);
+    border-color: #4cd2e1;
+    background: rgba(76, 210, 225, 0.2);
+}
+
+/* Ocultar en pantallas muy pequeñas de celular y colocar abajo elegantemente */
+@media (max-width: 600px) {
+    .social-sidebar {
+        flex-direction: row;
+        top: auto;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.85);
+        padding: 6px 15px;
+        border-radius: 30px;
+        border: 1px solid rgba(76, 210, 225, 0.3);
+    }
+    .social-icon-img {
+        width: 38px;
+        height: 38px;
+    }
+}
+
 /* Estilos de Encabezado */
 .hero-section {
-    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.church-logo-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.church-logo {
+    max-width: 140px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+.church-logo:hover {
+    transform: scale(1.05);
 }
 
 .badge-org {
@@ -122,7 +200,6 @@ h1 {
     margin: 0;
 }
 
-/* Banner de bienvenida dinámico (Azul sobrio y elegante) */
 .welcome-banner {
     background: linear-gradient(135deg, #173b5c, #24588a);
     color: #ffffff;
@@ -147,7 +224,7 @@ h1 {
     padding: 1.5rem 1rem;
 }
 
-.countdown-section h3, .cards-section h3, .teams-section h3 {
+.countdown-section h3, .cards-section h3, .teams-section h3, .youtube-section h3 {
     font-size: 1.9rem;
     margin-bottom: 1.2rem;
     color: #f7e10a;
@@ -183,7 +260,7 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* Tarjetas Interactivas 3D (Flip Cards - Info) */
+/* Tarjetas Interactivas (Info Esencial) */
 .cards-section {
     padding: 2.5rem 1rem;
 }
@@ -297,7 +374,9 @@ h1 {
     font-weight: 700;
 }
 
-/* Sección de Equipos (Diseño Especial Interactivo y Espiritual) */
+/* ==========================================
+   SECCIÓN DE EQUIPOS & CAPITANES
+   ========================================== */
 .teams-section {
     padding: 2.5rem 1rem;
     background: rgba(0, 0, 0, 0.25);
@@ -315,16 +394,15 @@ h1 {
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 1250px;
     margin: 0 auto;
 }
 
 .team-flip-card {
     background-color: transparent;
-    width: 210px;
-    height: 180px;
+    width: 260px;
+    height: 310px;
     perspective: 1000px;
-    cursor: pointer;
 }
 
 .team-flip-inner {
@@ -334,7 +412,7 @@ h1 {
     text-align: center;
     transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
     transform-style: preserve-3d;
-    border-radius: 14px;
+    border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
@@ -347,74 +425,236 @@ h1 {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 14px;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1.2rem 1rem;
     box-sizing: border-box;
     border: 2px solid rgba(255,255,255,0.2);
 }
 
-.team-badge {
-    font-size: 2.5rem;
-    margin-bottom: 0.3rem;
+.team-front {
+    cursor: pointer;
+}
+
+.team-logo-img {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+    margin-bottom: 0.2rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
 }
 
 .team-front h4 {
     font-size: 1.4rem;
-    margin: 0 0 0.3rem 0;
+    margin: 0;
+}
+
+.team-front-slogan {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #f7e10a;
+    margin: 0.2rem 0;
+    letter-spacing: 0.5px;
 }
 
 .team-tap-hint {
-    font-size: 0.85rem;
-    opacity: 0.8;
+    font-size: 0.8rem;
+    opacity: 0.85;
 }
 
-/* Colores personalizados para cada equipo (Frente) */
 .team-front.red { background: linear-gradient(135deg, #401010, #1a0505); border-color: #ff4d4d; color: #ff8787; }
 .team-front.yellow { background: linear-gradient(135deg, #403508, #1a1502); border-color: #ffd700; color: #ffe66d; }
 .team-front.green { background: linear-gradient(135deg, #103518, #051408); border-color: #2ecc71; color: #5cdb95; }
 .team-front.blue { background: linear-gradient(135deg, #0f2c42, #05111a); border-color: #3498db; color: #70a9ff; }
 
-/* Reverso de las tarjetas de equipo */
 .team-back {
     transform: rotateX(180deg);
     text-align: center;
-    padding: 1rem;
+    justify-content: center;
+    gap: 0.6rem;
 }
 
-.team-back h4 {
-    font-size: 1.2rem;
-    margin: 0 0 0.4rem 0;
-    color: #f7e10a;
+.captain-photo-large {
+    width: 130px;
+    height: 130px;
+    max-width: 130px;
+    max-height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f7e10a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0.2rem;
+    display: block;
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
 }
 
-.team-phrase {
-    font-size: 1.1rem;
-    font-weight: 900;
-    margin: 0.3rem 0;
-    color: #ffffff;
-    letter-spacing: 0.5px;
+.captain-photo-large:hover {
+    transform: scale(1.05);
 }
 
-.team-verse {
-    font-size: 1rem;
-    margin-top: 0.4rem;
+.captain-info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.captain-role {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: #4cd2e1;
-    background: rgba(0,0,0,0.4);
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
+    font-weight: 700;
 }
 
-/* Estilos de reverso por equipo */
+.captain-name-title {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.team-verse-small {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-style: italic;
+    cursor: pointer;
+}
+
 .team-back.red-back { background: linear-gradient(135deg, #591515, #260707); border-color: #ff4d4d; }
 .team-back.yellow-back { background: linear-gradient(135deg, #59490b, #261f03); border-color: #ffd700; }
 .team-back.green-back { background: linear-gradient(135deg, #154c22, #071f0d); border-color: #2ecc71; }
 .team-back.blue-back { background: linear-gradient(135deg, #153d5c, #071926); border-color: #3498db; }
 
-/* Botón de Confirmación Principal (Actualizado con azul sobrio y elegante) */
+/* ==========================================
+   SECCIÓN DE VIDEO DE YOUTUBE (TARJETA DIRECTA)
+   ========================================== */
+.youtube-section {
+    padding: 3rem 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.youtube-subtitle {
+    font-size: 1.3rem;
+    color: #4cd2e1;
+    margin-top: -0.8rem;
+    margin-bottom: 2rem;
+}
+
+.youtube-banner-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(20, 50, 30, 0.9), rgba(10, 25, 15, 0.95));
+    border: 2px solid rgba(76, 210, 225, 0.4);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    gap: 1.5rem;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.yt-icon-preview {
+    font-size: 3rem;
+    background: rgba(255, 0, 0, 0.2);
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: 1px solid #ff0000;
+}
+
+.yt-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.yt-info h4 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.5rem;
+    color: #f7e10a;
+}
+
+.yt-info p {
+    margin: 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.yt-watch-btn {
+    background: #ff0000;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+}
+
+.yt-watch-btn:hover {
+    transform: scale(1.08);
+    background: #e60000;
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+}
+
+/* ==========================================
+   ESTILOS DEL MODAL DE ZOOM (VENTANA FLOTANTE)
+   ========================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(76, 210, 225, 0.5);
+    border: 2px solid #4cd2e1;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #4cd2e1;
+}
+
+/* Botón de Confirmación Principal */
 .action-section {
     padding: 3rem 1rem;
 }
@@ -466,16 +706,21 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsividad para pantallas grandes */
-@media (min-width: 900px) {
+/* Responsividad para pantallas de PC */
+@media (min-width: 992px) {
     html {
         font-size: 12px;
     }
     h1 {
         font-size: 8rem;
     }
+    .teams-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
     .team-flip-card {
-        width: 220px;
-        height: 190px;
+        width: 100%;
+        height: 310px;
     }
 }

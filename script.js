@@ -57,8 +57,37 @@ function crearLuciernagas() {
     }
 }
 
+// Lógica para el Zoom de las imágenes (Modal)
+function configurarZoomImagenes() {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgExpanded");
+    const closeBtn = document.querySelector(".modal-close");
+    const imagenesZoom = document.querySelectorAll(".zoomable");
+
+    imagenesZoom.forEach(img => {
+        img.addEventListener("click", (e) => {
+            e.stopPropagation();
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+}
+
 // Ejecutamos todo al cargar
 actualizarCountdown();
 setInterval(actualizarCountdown, 1000);
 setInterval(cambiarMensajeDinamico, 6000);
 crearLuciernagas();
+configurarZoomImagenes();

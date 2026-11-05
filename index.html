@@ -15,17 +15,42 @@
     <!-- Contenedor para las luciérnagas -->
     <div class="fireflies-container" id="fireflies"></div>
 
+    <!-- Barra lateral flotante con tus enlaces oficiales y PNGs -->
+    <div class="social-sidebar">
+        <!-- 1. Instagram Iglesia -->
+        <a href="https://www.instagram.com/ces.central?xtok=anh3bnQ4cXExaXBs" target="_blank" class="social-icon-img" title="Instagram Iglesia">
+            <img src="img/icono-ig.WEBP" alt="Instagram Iglesia">
+        </a>
+        <!-- 2. Instagram Jóvenes -->
+        <a href="https://www.instagram.com/csjoven?exln=MXV2a2g5bWtkcWlsMg==" target="_blank" class="social-icon-img" title="Instagram CsJoven">
+            <img src="img/icono-ig.WEBP" alt="Instagram CsJoven">
+        </a>
+        <!-- 3. TikTok Oficial -->
+        <a href="https://www.tiktok.com/@csjoven?_r=1&_d=f23jhh90mi9l9b&sec_uid=MS4wLjABAAAApH3TH00E9k3N-TJY4Mtc97eeGa7Pd7CErENqTwRybcvpMk1I8NTzR_mZOMxAfcpL&share_author_id=7126688607641355269&sharer_language=es&source=h5_m&u_code=df80bbkdjhhac8&timestamp=1793909467&user_id=6888835293966042118&sec_user_id=MS4wLjABAAAAtfqF6BGnHVu4I-sn9pZSPsC5LC2CXCqM5MI1DaDUU-ISV3b6uLdvUBBW4JJdpWGm&item_author_type=2&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7703585139573409556&share_link_id=a26511e3-4d43-43a9-a46e-03468b975804&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b6880%2Cb5836&social_share_type=5&share_enter_from=others_homepage&item_author_type=2&enable_checksum=1" target="_blank" class="social-icon-img" title="TikTok Oficial">
+            <img src="img/icono-tiktok.png" alt="TikTok">
+        </a>
+        <!-- 4. YouTube Oficial -->
+        <a href="https://www.youtube.com/channel/UCGiMII_ZdfkV92ZIdXpKZBg" target="_blank" class="social-icon-img" title="YouTube Oficial">
+            <img src="img/icono-yt.WEBP" alt="YouTube">
+        </a>
+    </div>
+
     <header class="hero-section">
+        <!-- Logo de la Iglesia (Limpio y sin marcos) -->
+        <div class="church-logo-container">
+            <img src="img/logo-iglesia.png" alt="Logo de la Iglesia" class="church-logo zoomable" title="Haz clic para ampliar">
+        </div>
+
         <span class="badge-org">CsJoven Presenta</span>
         <h1>CAMPID</h1>
         <p class="subtitle">Campamento Identidad</p>
         
         <div class="event-dates">
             <h2>🗓️ Del 11 al 13 de Diciembre, 2026 🗓️</h2>
-            <p class="location">📍 <b>La Viscaina</b> — BARINAS</p>
+            <p class="location">📍 <b>La Viscaina</b> — BARINAS📍</p>
         </div>
 
-        <!-- Mensaje de bienvenida dinámico / Gancho -->
+        <!-- Mensaje de bienvenida dinámico -->
         <div class="welcome-banner">
             <p id="welcome-message">¡Prepárate para vivir una experiencia que marcará tu vida!</p>
         </div>
@@ -54,12 +79,11 @@
         </div>
     </section>
 
-    <!-- Tarjetas Interactivas (Flip Cards - Información Esencial) -->
+    <!-- Tarjetas Interactivas (Información Esencial) -->
     <section class="cards-section">
-        <h3>💡 Información Esencial (Toca para voltear) 💡</h3>
+        <h3>💡 Información Esencial 💡</h3>
         <div class="cards-grid">
             
-            <!-- Tarjeta 1: Equipaje / Qué llevar -->
             <div class="flip-card" onclick="this.classList.toggle('flipped')">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -80,7 +104,6 @@
                 </div>
             </div>
 
-            <!-- Tarjeta 2: Inversión / Precios Actualizados -->
             <div class="flip-card" onclick="this.classList.toggle('flipped')">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -97,7 +120,6 @@
                 </div>
             </div>
 
-            <!-- Tarjeta 3: Info Varia & Logística -->
             <div class="flip-card" onclick="this.classList.toggle('flipped')">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -118,73 +140,89 @@
         </div>
     </section>
 
-    <!-- Sección de Equipos (Con efecto de volteo especial y versículos Rhema) -->
+    <!-- Sección de Equipos con Lemas -->
     <section class="teams-section">
         <h3>⚔️ Nuestros 4 Equipos ⚔️</h3>
-        <p class="teams-subtitle">¡Toca cada equipo para descubrir su identidad y palabra Rhema!</p>
+        <p class="teams-subtitle">¡Toca cada equipo para descubrir su identidad, versículo y capitanes!</p>
         
         <div class="teams-grid">
             
             <!-- Águilas Rojas -->
-            <div class="team-flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="team-flip-card">
                 <div class="team-flip-inner">
-                    <div class="team-front red">
-                        <div class="team-badge">🦅</div>
+                    <div class="team-front red" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">
+                        <img src="img/logo-aguilas.png" alt="Águilas Rojas" class="team-logo-img">
                         <h4>Águilas Rojas</h4>
-                        <span class="team-tap-hint">Toca para ver identidad</span>
+                        <p class="team-front-slogan">“VOLANDO ALTO”</p>
+                        <span class="team-tap-hint">Toca para ver capitán</span>
                     </div>
                     <div class="team-back red-back">
-                        <h4>🦅 Águilas Rojas</h4>
-                        <p class="team-phrase">"VOLANDO ALTO"</p>
-                        <p class="team-verse"><b>Isaías 40:31</b></p>
+                        <img src="img/capitan-aguilas.jpg" alt="Capitán Águilas" class="captain-photo-large zoomable" title="Haz clic para ampliar">
+                        <div class="captain-info-box" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">
+                            <span class="captain-role">CapitANES:</span>
+                            <h4 class="captain-name-title"> JOSE, REBECA , LUIGER</h4>
+                        </div>
+                        <p class="team-verse-small" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">Isaías 40:31</p>
                     </div>
                 </div>
             </div>
 
             <!-- Leones Amarillos -->
-            <div class="team-flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="team-flip-card">
                 <div class="team-flip-inner">
-                    <div class="team-front yellow">
-                        <div class="team-badge">🦁</div>
+                    <div class="team-front yellow" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">
+                        <img src="img/logo-leones.png" alt="Leones Amarillos" class="team-logo-img">
                         <h4>Leones Amarillos</h4>
-                        <span class="team-tap-hint">Toca para ver identidad</span>
+                        <p class="team-front-slogan">“VALENTÍA Y CONFIANZA”</p>
+                        <span class="team-tap-hint">Toca para ver capitán</span>
                     </div>
                     <div class="team-back yellow-back">
-                        <h4>🦁 Leones Amarillos</h4>
-                        <p class="team-phrase">"VALENTÍA Y CONFIANZA"</p>
-                        <p class="team-verse"><b>Proverbios 28:1</b></p>
+                        <img src="img/capitan-leones.jpg" alt="Capitán Leones" class="captain-photo-large zoomable" title="Haz clic para ampliar">
+                        <div class="captain-info-box" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">
+                            <span class="captain-role">Capitanes:</span>
+                            <h4 class="captain-name-title"> JHON, VALERIE, ERIC</h4>
+                        </div>
+                        <p class="team-verse-small" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">Proverbios 28:1</p>
                     </div>
                 </div>
             </div>
 
             <!-- Búfalos Verdes -->
-            <div class="team-flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="team-flip-card">
                 <div class="team-flip-inner">
-                    <div class="team-front green">
-                        <div class="team-badge">🐃</div>
+                    <div class="team-front green" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">
+                        <img src="img/logo-bufalos.png" alt="Búfalos Verdes" class="team-logo-img">
                         <h4>Búfalos Verdes</h4>
-                        <span class="team-tap-hint">Toca para ver identidad</span>
+                        <p class="team-front-slogan">“FUERZA UNGIDA”</p>
+                        <span class="team-tap-hint">Toca para ver capitán</span>
                     </div>
                     <div class="team-back green-back">
-                        <h4>🐃 Búfalos Verdes</h4>
-                        <p class="team-phrase">"FUERZA UNGIDA"</p>
-                        <p class="team-verse"><b>Salmos 92:10</b></p>
+                        <img src="img/capitan-bufalos.jpg" alt="Capitán Búfalos" class="captain-photo-large zoomable" title="Haz clic para ampliar">
+                        <div class="captain-info-box" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">
+                            <span class="captain-role">Capitanes:</span>
+                            <h4 class="captain-name-title"> JESUS, KATHERINE, DAVID</h4>
+                        </div>
+                        <p class="team-verse-small" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">Salmos 92:10</p>
                     </div>
                 </div>
             </div>
 
             <!-- Lobos Azules -->
-            <div class="team-flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="team-flip-card">
                 <div class="team-flip-inner">
-                    <div class="team-front blue">
-                        <div class="team-badge">🐺</div>
+                    <div class="team-front blue" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">
+                        <img src="img/logo-lobos.png" alt="Lobos Azules" class="team-logo-img">
                         <h4>Lobos Azules</h4>
-                        <span class="team-tap-hint">Toca para ver identidad</span>
+                        <p class="team-front-slogan">“¡GUERREROS CONQUISTADORES!”</p>
+                        <span class="team-tap-hint">Toca para ver capitán</span>
                     </div>
                     <div class="team-back blue-back">
-                        <h4>🐺 Lobos Azules</h4>
-                        <p class="team-phrase">"¡GUERREROS CONQUISTADORES!"</p>
-                        <p class="team-verse"><b>Génesis 49:27</b></p>
+                        <img src="img/capitan-lobos.jpg" alt="Capitán Lobos" class="captain-photo-large zoomable" title="Haz clic para ampliar">
+                        <div class="captain-info-box" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">
+                            <span class="captain-role">Capitanes:</span>
+                            <h4 class="captain-name-title"> JOSE, MARIA, JAVIER</h4>
+                        </div>
+                        <p class="team-verse-small" onclick="this.closest('.team-flip-card').classList.toggle('flipped')">Génesis 49:27</p>
                     </div>
                 </div>
             </div>
@@ -192,9 +230,25 @@
         </div>
     </section>
 
-    <!-- Botón de Confirmación Principal (Actualizado con azul sobrio y elegante) -->
+    <!-- Sección de Resumen Campid Anterior (Tarjeta de YouTube sin restricciones) -->
+    <section class="youtube-section">
+        <h3>✨ Revive el Campid del Año Pasado ✨</h3>
+        <p class="youtube-subtitle">¡Mira un poco de lo que Dios hizo y prepárate para lo que viene!</p>
+        <div class="youtube-banner-card">
+            <div class="yt-icon-preview">▶️</div>
+            <div class="yt-info">
+                <h4>Resumen Oficial Campid</h4>
+                <p>Haz clic para disfrutar el video completo en YouTube</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=Nq10S2oObeU" target="_blank" class="yt-watch-btn">
+                VER VIDEO
+            </a>
+        </div>
+    </section>
+
+    <!-- Botón de Confirmación Principal -->
     <section class="action-section">
-        <p class="deadline-text">🚨 ¡Fecha límite para confirmar: <b>08/12/26</b>! 🚨</p>
+        <p class="deadline-text">🚨 ¡Fecha límite para confirmar: <b>05/12/26</b>! 🚨</p>
         <a href="http://wa.me/584127864213?text=¡Hola!%20Quiero%20confirmar%20mi%20inscripción%20al%20Campid%20CsJoven" class="cta-button" target="_blank">
             ⛺ ¡CONFIRMAR MI INSCRIPCIÓN AQUÍ! ⛺
         </a>
@@ -206,6 +260,13 @@
         <a href="http://wa.me/584126014134?text=¡Hola!%20Me%20interesa%20información%20para%20crear%20una%20web" target="_blank">Clic aquí para más información de desarrollo</a>
     </footer>
 
+    <!-- MODAL O VENTANA FLOTANTE PARA EL ZOOM DE IMÁGENES -->
+    <div id="imageModal" class="modal-overlay">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="imgExpanded">
+    </div>
+
+    <!-- Script de Funcionalidad -->
     <script src="script.js"></script>
 </body>
 </html>
