@@ -10,6 +10,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    padding-bottom: 70px; /* Margen inferior para que los iconos flotantes no tapen el footer en celulares */
     width: 100%;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
@@ -114,17 +115,19 @@ body {
     .social-sidebar {
         flex-direction: row;
         top: auto;
-        bottom: 15px;
+        bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.85);
+        background: rgba(0, 0, 0, 0.9);
         padding: 6px 15px;
         border-radius: 30px;
-        border: 1px solid rgba(76, 210, 225, 0.3);
+        border: 1px solid rgba(76, 210, 225, 0.4);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+        z-index: 1000;
     }
     .social-icon-img {
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
     }
 }
 
@@ -351,8 +354,8 @@ h1 {
 }
 
 .flip-card-back ul, .flip-card-back p {
-    font-size: 1.1rem;
-    margin: 0.3rem 0;
+    font-size: 1.05rem;
+    margin: 0.25rem 0;
     padding-left: 1.2rem;
     line-height: 1.3;
 }
@@ -362,7 +365,7 @@ h1 {
 }
 
 .small-note {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #f7e10a;
     text-align: center;
     width: 100%;
@@ -375,7 +378,7 @@ h1 {
 }
 
 /* ==========================================
-   SECCIÓN DE EQUIPOS & CAPITANES
+   SECCIÓN DE EQUIPOS & CAPITANES (LOGOS CENTRADOS)
    ========================================== */
 .teams-section {
     padding: 2.5rem 1rem;
@@ -428,11 +431,12 @@ h1 {
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1.2rem 1rem;
     box-sizing: border-box;
     border: 2px solid rgba(255,255,255,0.2);
+    gap: 0.6rem;
 }
 
 .team-front {
@@ -440,20 +444,25 @@ h1 {
 }
 
 .team-logo-img {
-    width: 95px;
-    height: 95px;
+    width: 85px;
+    height: 85px;
     object-fit: contain;
-    margin-bottom: 0.2rem;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
 }
 
+.team-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .team-front h4 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 0;
 }
 
 .team-front-slogan {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 800;
     color: #f7e10a;
     margin: 0.2rem 0;
@@ -461,8 +470,9 @@ h1 {
 }
 
 .team-tap-hint {
-    font-size: 0.8rem;
-    opacity: 0.85;
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-top: 0.2rem;
 }
 
 .team-front.red { background: linear-gradient(135deg, #401010, #1a0505); border-color: #ff4d4d; color: #ff8787; }
@@ -532,7 +542,7 @@ h1 {
 .team-back.blue-back { background: linear-gradient(135deg, #153d5c, #071926); border-color: #3498db; }
 
 /* ==========================================
-   SECCIÓN DE VIDEO DE YOUTUBE (TARJETA DIRECTA)
+   SECCIÓN DE VIDEO DE YOUTUBE
    ========================================== */
 .youtube-section {
     padding: 3rem 1rem;
@@ -548,64 +558,25 @@ h1 {
     margin-bottom: 2rem;
 }
 
-.youtube-banner-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(135deg, rgba(20, 50, 30, 0.9), rgba(10, 25, 15, 0.95));
-    border: 2px solid rgba(76, 210, 225, 0.4);
-    max-width: 700px;
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 1.5rem 2rem;
+    padding-bottom: 56.25%;
+    height: 0;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    gap: 1.5rem;
-    text-align: left;
-    flex-wrap: wrap;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border: 2px solid rgba(76, 210, 225, 0.3);
 }
 
-.yt-icon-preview {
-    font-size: 3rem;
-    background: rgba(255, 0, 0, 0.2);
-    padding: 10px 18px;
-    border-radius: 12px;
-    border: 1px solid #ff0000;
-}
-
-.yt-info {
-    flex: 1;
-    min-width: 200px;
-}
-
-.yt-info h4 {
-    margin: 0 0 0.3rem 0;
-    font-size: 1.5rem;
-    color: #f7e10a;
-}
-
-.yt-info p {
-    margin: 0;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.yt-watch-btn {
-    background: #ff0000;
-    color: #ffffff;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
-}
-
-.yt-watch-btn:hover {
-    transform: scale(1.08);
-    background: #e60000;
-    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* ==========================================

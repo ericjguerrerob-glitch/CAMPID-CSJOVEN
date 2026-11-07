@@ -57,6 +57,20 @@ function crearLuciernagas() {
     }
 }
 
+// Lógica mejorada para voltear tarjetas de equipos
+function configurarGiroEquipos() {
+    const teamCards = document.querySelectorAll(".team-flip-card");
+    teamCards.forEach(card => {
+        card.addEventListener("click", (e) => {
+            // Si el clic fue en la imagen del capitán, abrimos el zoom y no volteamos la tarjeta
+            if (e.target.classList.contains("zoomable")) {
+                return;
+            }
+            card.classList.toggle("flipped");
+        });
+    });
+}
+
 // Lógica para el Zoom de las imágenes (Modal)
 function configurarZoomImagenes() {
     const modal = document.getElementById("imageModal");
@@ -66,7 +80,7 @@ function configurarZoomImagenes() {
 
     imagenesZoom.forEach(img => {
         img.addEventListener("click", (e) => {
-            e.stopPropagation();
+            e.stopPropagation(); // Evita que la tarjeta se voltee al ampliar la foto
             modal.style.display = "flex";
             modalImg.src = img.src;
         });
@@ -90,4 +104,5 @@ actualizarCountdown();
 setInterval(actualizarCountdown, 1000);
 setInterval(cambiarMensajeDinamico, 6000);
 crearLuciernagas();
+configurarGiroEquipos();
 configurarZoomImagenes();
