@@ -10,7 +10,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    padding-bottom: 70px; /* Margen inferior para que los iconos flotantes no tapen el footer en celulares */
+    padding-bottom: 70px;
     width: 100%;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
@@ -110,7 +110,6 @@ body {
     background: rgba(76, 210, 225, 0.2);
 }
 
-/* Ocultar en pantallas muy pequeñas de celular y colocar abajo elegantemente */
 @media (max-width: 600px) {
     .social-sidebar {
         flex-direction: row;
@@ -542,11 +541,11 @@ h1 {
 .team-back.blue-back { background: linear-gradient(135deg, #153d5c, #071926); border-color: #3498db; }
 
 /* ==========================================
-   SECCIÓN DE VIDEO DE YOUTUBE
+   NUEVOS ESTILOS IMPACTANTES DE YOUTUBE (BANNER)
    ========================================== */
 .youtube-section {
     padding: 3rem 1rem;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.35);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -558,25 +557,139 @@ h1 {
     margin-bottom: 2rem;
 }
 
-.video-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
+.yt-video-card-container {
+    max-width: 650px;
     margin: 0 auto;
-    padding-bottom: 56.25%;
-    height: 0;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    border: 2px solid rgba(76, 210, 225, 0.3);
+    padding: 0 10px;
 }
 
-.video-container iframe {
+.yt-video-link-wrapper {
+    display: block;
+    text-decoration: none;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #0e2718, #07170e);
+    border: 2px solid rgba(76, 210, 225, 0.4);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    transition: all 0.35s ease;
+}
+
+.yt-video-link-wrapper:hover {
+    transform: translateY(-6px) scale(1.01);
+    border-color: #f7e10a;
+    box-shadow: 0 18px 45px rgba(247, 225, 10, 0.25);
+}
+
+/* Miniatura con efecto cinematográfico */
+.yt-thumbnail-box {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.yt-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.yt-video-link-wrapper:hover .yt-thumb-img {
+    transform: scale(1.08);
+    opacity: 0.95;
+}
+
+.yt-dark-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+/* Botón central de Play */
+.yt-play-btn-circle {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    background: rgba(255, 0, 0, 0.9);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+    border: 3px solid #ffffff;
+    transition: all 0.3s ease;
+}
+
+.yt-play-icon {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-left: 4px; /* Centrado óptico del ícono */
+}
+
+.yt-video-link-wrapper:hover .yt-play-btn-circle {
+    transform: scale(1.18);
+    background: #ff0000;
+    box-shadow: 0 0 35px rgba(255, 0, 0, 1);
+}
+
+.yt-badge-live {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ff4d4d;
+    font-size: 0.95rem;
+    font-weight: 900;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #ff4d4d;
+    letter-spacing: 1px;
+}
+
+/* Footer de la tarjeta del video */
+.yt-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 1.8rem;
+    background: rgba(5, 18, 10, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.yt-footer-text {
+    text-align: left;
+}
+
+.yt-footer-text h4 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.yt-footer-text p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #4cd2e1;
+}
+
+.yt-action-arrow {
+    font-size: 1.8rem;
+    color: #f7e10a;
+    transition: transform 0.3s ease;
+}
+
+.yt-video-link-wrapper:hover .yt-action-arrow {
+    transform: translateX(6px);
 }
 
 /* ==========================================
